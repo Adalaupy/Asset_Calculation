@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Asset</title>
+
+
+    <link rel="stylesheet" type="text/css" href="./static/styles.css">
+
+
+</head>
+<body>
+
+    <h1>My Asset</h1>
+
+
+    <form id = 'form1' method = "post" action = '/'>        
+
+        <div class="container">
+
+            <label>Year Month:</label>
+            <input type = "text" name = "yearmonth_input">    
+
+        </div>
+
+
+        <div class="container">
+            
+            <label>Source:</label>
+            <input type = "Source" name = "source_input">    
+
+        </div>
+
+        <div class="container">
+            
+            <label>Type:</label>
+            <input type = "text" name = "type_input">    
+
+        </div>
+
+        <div class="container">
+            
+            <label>Amount:</label>
+            <input type = "text" name = "amt_input">    
+
+        </div>
+
+
+        <div class="container">
+            
+            <label>Currency:</label>
+            <input type = "text" name = "curr_input">    
+
+        </div>
+        
+                
+        <input type="submit" id = 'btn_insert' value = 'Insert'> 
+
+
+
+
+        <br>
+
+        <!-- option for choosing the YearMonth you want -->
+        
+        <label for ="date" id="filter_by_date"> Filter by date </label>       
+        
+        <select name = 'YearMonth' id = 'yearmonth'>
+            <option value = ""> All Year Month</option>
+            {% for date in YearMonth %}
+                <option value = "{{ date }} ">{{date}}</option>
+            {% endfor %}
+        
+        </select>
+        
+        <input type = "submit" value = "Filter">
+
+
+    </form>
+
+
+
+
+    <table>
+        
+        <thead>
+            <tr>
+                {% for col in df.columns %}
+                    <th> {{ col }} </th>                
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for index,row in df.iterrows() %}
+                <tr>
+                    
+                    {% for col in df.columns %}                        
+                        <td> {{ row[col] }} </td>
+                    {% endfor %}                 
+
+                </tr>
+            {% endfor %}
+        
+        </tbody>
+
+    </table>
+
+
+    <div class="container" id = "graph">
+
+        <h1>Charts: </h1>
+       
+        <img src="data:image/png;base64,{{ pie_data }}" alt="Pie Chart">
+        <img src="data:image/png;base64,{{ line_data }}" alt="Line Chart">
+    </div>
+
+    <br>
+    <h3 id = "summary">Your {{time_ind}} Net Asset : <u><u>{{Sum_asset}}</u></u></h3>
+
+
+
+
+
+</body>
+</html>
+

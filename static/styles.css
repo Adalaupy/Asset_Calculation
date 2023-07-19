@@ -1,0 +1,73 @@
+form {
+    margin-left: 20px;
+    font-size: 20px;
+}
+/* Center the form and table elements */
+table {
+margin: 0 auto;
+width: 50%;
+}
+
+
+/* Style the container divs */
+.container {
+display: flex;
+margin: 15px 0;
+width: 50%;
+}
+
+/* Style the label elements */
+.container label {
+width: 300px;
+margin-right: 10px;
+}
+
+/* Style the input elements */
+.container input {
+flex: 5;
+}
+
+
+/* Style the submit button */
+input[type="submit"] {
+margin-bottom: 20px ;
+padding: 10px 10px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 10px;
+cursor: pointer;
+font-size: 15px;
+}
+
+/* Style the table */
+table {
+border-collapse: collapse;
+width: 100%;
+}
+
+/* Style the table header */
+th {
+background-color: #4CAF50;
+color: white;
+text-align: left;
+padding: 10px;
+}
+
+/* Style the table rows */
+tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+/* Style the table cells */
+td {
+padding: 10px;
+}
+
+
+#summary {
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
